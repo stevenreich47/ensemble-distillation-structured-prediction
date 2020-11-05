@@ -8,6 +8,9 @@ https://arxiv.org/abs/2010.06721
 
 If you use this code in published work, please cite the paper above.
 
+The official Fairseq repo is here: https://github.com/pytorch/fairseq
+Many thanks to the developers!
+
 # Environment
 
 This is based on Fairseq 0.9.0. Please see `conda_list.txt` for a list
