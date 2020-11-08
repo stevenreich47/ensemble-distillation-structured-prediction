@@ -2,9 +2,9 @@ This repo contains modifications to [Fairseq](https://github.com/pytorch/fairseq
 distillation, as originally described in the EMNLP 2020 paper:
 
 Ensemble Distillation for Structured Prediction: Calibrated, Accurate,
-Fast - Choose Three. EMNLP (2020).
-Steven Reich, David Mueller, Nicholas Andrews
-https://arxiv.org/abs/2010.06721
+Fast - Choose Three. EMNLP (2020).  
+Steven Reich, David Mueller, Nicholas Andrews  
+https://arxiv.org/abs/2010.06721  
 
 If you use this code in published work, please cite the paper above.
 The Fairseq library is described in the paper below:
