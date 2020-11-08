@@ -16,8 +16,10 @@ Many thanks to the Fairseq developers for a great library!
 
 # Environment
 
-This is based on Fairseq 0.9.0. Please see `conda_list.txt` for a list
-of a working conda virtual environment.
+This is based on Fairseq 0.9.0 so your environment should be compatible
+with that. The Fairseq README provides instructions for installing the required packages.
+Please see `conda_list.txt` for a list of a working conda virtual environment
+that was used to run experiments reported in the paper above.
 
 *Note*: the changes are fairly self-contained and it should be
  possible to apply them to the latest verion of Fairseq without too
