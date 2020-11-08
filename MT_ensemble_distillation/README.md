@@ -1,4 +1,4 @@
-This repo contains modifications to Fairseq to support ensemble
+This repo contains modifications to [Fairseq](https://github.com/pytorch/fairseq) to support ensemble
 distillation, as originally described in the EMNLP 2020 paper:
 
 Ensemble Distillation for Structured Prediction: Calibrated, Accurate,
@@ -7,8 +7,7 @@ Steven Reich, David Mueller, Nicholas Andrews
 https://arxiv.org/abs/2010.06721
 
 If you use this code in published work, please cite the paper above.
-
-The official Fairseq repo is here: https://github.com/pytorch/fairseq
+The Fairseq library is described in the paper below:
 
 Ott, Myle, et al. "fairseq: A fast, extensible toolkit for sequence
 modeling." arXiv preprint arXiv:1904.01038 (2019).
