@@ -43,8 +43,8 @@ The steps are as follows using the scripts in that directory:
 random seeds. We use the standard recipes provided by Fairseq for this
 for Transformers.
 
-3. `cache_ensemble_predictions.sh`: Memoize the predictive distribution of the ensemble.
+3. `cache_ensemble_predictions.sh`: Memoize the predictive distribution of the ensemble. For example, to cache the top-64 predictions from three models called `ce1`, `ce2`, and `ce3`, you would run: `./cache_ensemble_predictions.sh 64 last ce1 ce2 ce3`.
 
-4. `distill_ensemble.sh`: Distill the ensemble into a single model using the cached probs.
+4. `distill_ensemble.sh`: Distill the ensemble into a single model using the cached probs. For example: `./distill_ensemble.sh de2en_ens3_64 64 1 0.5 300000 kl 0.1 0.0007 0.1 ce1_ce2_ce3_64_last.h5`.
 
 5. `eval.sh`: Evaluation script.
