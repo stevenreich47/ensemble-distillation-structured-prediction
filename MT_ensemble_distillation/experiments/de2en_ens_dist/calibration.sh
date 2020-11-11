@@ -8,14 +8,11 @@ set -u
 # JOBS_DIR - directory with trained models 
 # DATA_DIR - path to preprocessed wmt16 data
 
-if [ $# -lt 2 ]; then
-    echo "Usage: ${0} <SPLIT> <JOBS>"
+if [ $# -lt 1 ]; then
+    echo "Usage: ${0} <JOBS>"
     ls ${JOBS_DIR}
     exit
 fi
-
-SPLIT=$1
-shift
 
 CHECKPOINTS=`python join_ensemble_path.py ${JOBS_DIR} $@`
 
@@ -29,7 +26,7 @@ python ${VALIDATE} ${DATA_DIR} \
        --target-lang en \
        --task translation \
        --criterion cross_entropy \
-       --valid-subset ${DATA_DIR}/${SPLIT} \
+       --valid-subset ${DATA_DIR}/test \
        --path ${CHECKPOINTS} \
        --max-tokens 4096 \
        --num-workers 10
