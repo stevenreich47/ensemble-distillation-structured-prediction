@@ -9,6 +9,20 @@
 set -e
 set -u
 
+# --- SYSTEM ---
+# These lines are for use with a qsub command
+# Modify as appropriate for your system, or ignore
+#
+# N_GPU=2  # N_GPU*UPDATE_FREQ should be 8
+# GPU_TYPE=rtx
+# NUM_PROC=20
+# MEM=12G
+# HOURS=48
+
+# --- BATCHING ---
+UPDATE_FREQ=4
+MAX_UPDATE=300000
+
 if [ $# -lt 2 ]; then
    echo "Usage: ${0} JOB_NAME SEED [FLAGS]"
    exit
@@ -25,6 +39,7 @@ if [ ! -d "${DATA_DIR}" ]; then
     exit
 fi
 
+JOB_DIR=${JOBS_DIR}/${JOB_NAME}
 mkdir -p ${JOB_DIR}
 JOB_SCRIPT=${JOB_DIR}/job.sh
 
@@ -73,6 +88,10 @@ fairseq-train \
 EOL
 
 chmod a+x ${JOB_SCRIPT}
+
+# Run the job; you may prefer to use a command like the one commented below instead
 ${JOB_SCRIPT}
+
+# qsub -q gpu.q@@${GPU_TYPE} -l gpu=${N_GPU},mem_free=${MEM},h_rt=${HOURS}:00:00,num_proc=${NUM_PROC} ${JOB_SCRIPT}
 
 # eof

@@ -5,17 +5,16 @@ set -u
 
 # Define the following environment variables:
 #
+# JOBS_DIR - directory with trained models 
 # DATA_DIR - path to preprocessed wmt16 data
 
-if [ $# -lt 3 ]; then
-    echo "Usage: ${0} <SPLIT> <JOBS_DIR> <JOBS>"
+if [ $# -lt 2 ]; then
+    echo "Usage: ${0} <SPLIT> <JOBS>"
     ls ${JOBS_DIR}
     exit
 fi
 
 SPLIT=$1
-JOBS_DIR=$2
-shift
 shift
 
 CHECKPOINTS=`python join_ensemble_path.py ${JOBS_DIR} $@`
