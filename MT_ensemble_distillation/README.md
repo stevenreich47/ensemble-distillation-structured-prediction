@@ -36,10 +36,11 @@ See `experiments/de2en_ens_dist` for experiment scripts for the
 `--target-lang` arguments in these scripts.
 
 Set the following environment variables:
-`RAW_DATA` - path to raw WMT data
-`DATA_DIR` - where to output the preprocessed data
-`JOBS_DIR` - where to save directories of model checkpoints
-`OUTPUT_DIR` - where to save .h5 files of (truncated) teacher distributions 
+
+* `RAW_DATA` - path to raw WMT data
+* `DATA_DIR` - where to output the preprocessed data
+* `JOBS_DIR` - where to save directories of model checkpoints
+* `OUTPUT_DIR` - where to save .h5 files of (truncated) teacher distributions 
 
 The steps are as follows using the scripts in that directory:
 
