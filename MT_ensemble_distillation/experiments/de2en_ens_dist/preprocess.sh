@@ -2,15 +2,15 @@
 
 # Define the following environment variables:
 #
-# SRC - path to raw WMT16 data
-# TGT - where to output the preprocessed data
+# RAW_DATA - path to raw WMT16 data
+# DATA_DIR - where to output the preprocessed data
 
 fairseq-preprocess \
     --source-lang de --target-lang en \
-    --trainpref $SRC/train.tok.clean.bpe.32000 \
-    --validpref $SRC/newstest2013.tok.bpe.32000 \
-    --testpref $SRC/newstest2014.tok.bpe.32000 \
-    --destdir $TGT \
+    --trainpref $RAW_DATA/train.tok.clean.bpe.32000 \
+    --validpref $RAW_DATA/newstest2013.tok.bpe.32000 \
+    --testpref $RAW_DATA/newstest2014.tok.bpe.32000 \
+    --destdir $DATA_DIR \
     --nwordssrc 32768 --nwordstgt 32768 \
     --joined-dictionary \
     --workers 20

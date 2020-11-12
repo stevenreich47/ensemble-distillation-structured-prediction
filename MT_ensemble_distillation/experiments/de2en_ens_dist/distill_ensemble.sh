@@ -4,10 +4,20 @@
 #
 # JOBS_DIR - directory with trained models
 # DATA_DIR - path to preprocessed wmt16 data
-# TEACHER_DIR - dir with memoized teacher confidences
+# OUTPUT_DIR - dir with memoized teacher confidences
 
 set -e
 set -u
+
+# --- SYSTEM ---
+# For use with a qsub command
+# Modify as appropriate for your system, or ignore
+#
+# N_GPU=4  # N_GPU*UPDATE_FREQ should be 8
+# NUM_PROC=40
+# GPU_TYPE=rtx
+# MEM=12G
+# HOURS=96
 
 # --- BATCHING ---
 UPDATE_FREQ=2
@@ -15,7 +25,7 @@ MAX_TOKENS=4096
 WARMUP_UPDATE=5000
 SAVE_INTERVAL_UPDATES=2000
 
-TEACHER_DIR=/expscratch/nandrews/nmt/fairseq/jobs/de2en/teachers
+# TEACHER_DIR=/expscratch/nandrews/nmt/fairseq/jobs/de2en/teachers
 
 if [ $# -lt 9 ]; then
    echo "Usage: ${0} JOB_NAME TOPK TEMP WEIGHT MAX_UPDATE DIVERGENCE DROPOUT LR LS TEACHERS"
@@ -56,7 +66,7 @@ if [ ! -d "${DATA_DIR}" ]; then
     exit
 fi
 
-TEACHER_FILE=`python join_ensemble_path.py ${TEACHER_DIR} ${TEACHERS}`
+TEACHER_FILE=`python join_ensemble_path.py ${OUTPUT_DIR} ${TEACHERS}`
 echo "Teacher: ${TEACHER_FILE}"
 
 JOB_DIR=${JOBS_DIR}/${JOB_NAME}_FROM_SCRATCH_${DIVERGENCE}_${T}_${TOPK}_${WEIGHT}_${MAX_UPDATE}_${LR}_${LS}_${DROPOUT}_${TEACHERS}
@@ -107,6 +117,10 @@ fairseq-train \
 EOL
 
 chmod a+x ${JOB_SCRIPT}
+
+# Run the job; you may prefer to use a command like the one commented below instead
 bash ${JOB_SCRIPT}
+
+# qsub -q gpu.q@@${GPU_TYPE} -l gpu=${N_GPU},mem_free=${MEM},h_rt=${HOURS}:00:00,num_proc=${NUM_PROC} ${JOB_SCRIPT}
 
 # eof

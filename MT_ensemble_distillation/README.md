@@ -32,14 +32,21 @@ that was used to run experiments reported in the paper above.
 # Experiment scripts
 
 See `experiments/de2en_ens_dist` for experiment scripts for the
-`de2en` task. You can do the other direction by swapping the `src` and
-`tgt` arguments in these scripts.
+`de2en` task. You can do the other direction by swapping the `--source-lang` and
+`--target-lang` arguments in these scripts.
+
+Set the following environment variables:
+
+* `RAW_DATA` - path to raw WMT data
+* `DATA_DIR` - where to output the preprocessed data
+* `JOBS_DIR` - where to save directories of model checkpoints
+* `OUTPUT_DIR` - where to save .h5 files of (truncated) teacher distributions 
 
 The steps are as follows using the scripts in that directory:
 
 1. `preprocess.sh`: Preprocess the data.
 
-2. `fit_teacher.sh`: Train an ensemble by fitting `N` separate models with different
+2. `fit_teacher.sh`: Train an ensemble by running this script `N` times with different
 random seeds. We use the standard recipes provided by Fairseq for this
 for Transformers.
 
@@ -47,4 +54,6 @@ for Transformers.
 
 4. `distill_ensemble.sh`: Distill the ensemble into a single model using the cached probs. For example: `./distill_ensemble.sh de2en_ens3_64 64 1 0.5 300000 kl 0.1 0.0007 0.1 ce1_ce2_ce3_64_last.h5`.
 
-5. `eval.sh`: Evaluation script.
+5. `eval.sh`: Evaluation script (BLEU score). Takes as an argument the directory within `$JOBS_DIR` containing the checkpoints for the model to be evaluated. For example: `./eval.sh ce1`.
+
+6. `calibration.sh`: Evaluate calibration. Takes as an argument a checkpoint within `$JOBS_DIR` to be evaluated (if multiple checkpoints are passed, ensemble predictions are evaluated). For example: `./calibration.sh ce1/checkpoint_last.pt ce2/checkpoint_last.pt ce3/checkpoint_last.pt`.
