@@ -26,13 +26,12 @@ Configure for development
 python setup.py develop
 ```
 
-Define the following environment variables, e.g. in `.bashrc`.
-Adjust the paths below to match your environment.
+Define the following environment variables, e.g. in `.bashrc`:
 
-`GRIFFIN_REPO_DIR`: directory containing this README
-`GRIFFIN_EXP_DIR`: where to save model files, etc.
-`NER_DATA_DIR`: location of iob2 processed CoNLL 2003 splits 
-`MBERT_DIR`: directory containing vocab and ckpt for m-BERT
+* `GRIFFIN_REPO_DIR`: directory containing this README
+* `GRIFFIN_EXP_DIR`: where to save model files, etc.
+* `NER_DATA_DIR`: location of iob2 processed CoNLL 2003 splits 
+* `MBERT_DIR`: directory containing vocab and ckpt for m-BERT
 
 # Experiment scripts
 
