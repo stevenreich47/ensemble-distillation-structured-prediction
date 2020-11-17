@@ -1,0 +1,16 @@
+tensorflow-addons==0.8.1
+tqdm
+pylint
+jsonlines
+pytest
+scipy
+absl-py
+tensorflow==2.1.0
+chardet==3.0.4
+data-science-types
+mypy
+jsonlines
+scikit-learn
+matplotlib
+typing-extensions
+click
