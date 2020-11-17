@@ -1,0 +1,20 @@
+from setuptools import setup
+
+setup(name='griffin',
+      version='0.2',
+      description='2020 Named-Entity Recognition',
+      url='https://gitlab.hltcoe.jhu.edu/research/scale2019',
+      author='The SCALE 2019 Team',
+      author_email='noa@jhu.edu',
+      license='Apache 2.0',
+      packages=['griffin'],
+      install_requires=[
+            'numpy',
+            'tensorflow==2.0.0',
+            # 'tensor2tensor==1.13.4',
+            # 'tensorflow-probability==0.6.0',
+            'scipy',
+            'tqdm',
+          # 'pickle',
+      ],
+      zip_safe=False)

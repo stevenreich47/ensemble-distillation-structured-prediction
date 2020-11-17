@@ -1,0 +1,11 @@
+This	1
+is	2
+test	3
+
+Second	4
+test	5
+
+-DOCSTART-	with some	other junk
+
+Third	6
+test	7
