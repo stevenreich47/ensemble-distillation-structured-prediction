@@ -21,7 +21,7 @@ from typing import Union
 
 import numpy as np
 
-from griffin.conll import get_tag_type, is_begin_tag
+from ner.conll import get_tag_type, is_begin_tag
 
 
 def tags_to_ids(tags_as_strings: List[str],

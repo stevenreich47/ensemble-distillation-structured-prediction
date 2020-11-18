@@ -78,7 +78,7 @@ if __name__ == "__main__":
         exit()
     model = sys.argv[1]
     split = sys.argv[2]
-    exp_dir = os.environ.get("GRIFFIN_EXP_DIR") + "/conll_de"
+    exp_dir = os.environ.get("NER_EXP_DIR") + "/conll_de"
 
     metrics_list = {}
 

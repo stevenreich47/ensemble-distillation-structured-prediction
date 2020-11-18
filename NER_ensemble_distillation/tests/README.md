@@ -1,1 +1,1 @@
-# Tests for Griffin
+# Tests for NER

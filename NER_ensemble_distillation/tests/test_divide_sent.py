@@ -2,7 +2,7 @@ from typing import List
 
 import pytest
 
-from griffin.parser import CoNLLAlignedSentenceFeatureParser, AlignedBertTokens
+from ner.parser import CoNLLAlignedSentenceFeatureParser, AlignedBertTokens
 
 divide_tokens = CoNLLAlignedSentenceFeatureParser._divide_tokens
 

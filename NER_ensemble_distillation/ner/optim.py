@@ -18,7 +18,7 @@
 import tensorflow.compat.v1 as tf
 import tensorflow_addons as tfa
 
-from griffin.registry import Registries
+from ner.registry import Registries
 
 
 @Registries.optimizers.register
@@ -48,7 +48,7 @@ def adafactor(learning_rate, hparams):
   # pylint: disable=import-outside-toplevel
   if "use_lrate_none" in hparams and hparams.use_lrate_none:
     learning_rate = None
-  import griffin.adafactor as af
+  import ner.adafactor as af
 
   del hparams
   return af.AdafactorOptimizer(learning_rate=learning_rate)

@@ -5,7 +5,7 @@ import os
 from statistics import stdev
 from math import sqrt
 
-from griffin.conlleval import evaluate, full_metrics
+from ner.conlleval import evaluate, full_metrics
 
 if len(sys.argv) < 3:
     print("Error: you must choose a model type and a split")
@@ -17,7 +17,7 @@ split = str(sys.argv[2])
 
 f1_list ={}
 
-exp_dir = os.environ.get("GRIFFIN_EXP_DIR") + "/conll_de"
+exp_dir = os.environ.get("NER_EXP_DIR") + "/conll_de"
 
 for i in range(10):
     pred_file = exp_dir + f"/{model}_{i}/{split}_predictions.txt"

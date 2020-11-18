@@ -12,8 +12,8 @@ If you use this code in published work, please cite the paper above.
 
 Create and activate a dedicated virtual environment
 ``` bash
-conda create -n griffin pip python=3.7
-conda activate griffin
+conda create -n ner pip python=3.7
+conda activate ner
 ```
 
 Install necessary Python dependencies
@@ -28,8 +28,8 @@ python setup.py develop
 
 Define the following environment variables, e.g. in `.bashrc`:
 
-* `GRIFFIN_REPO_DIR`: directory containing this README
-* `GRIFFIN_EXP_DIR`: where to save model files, etc.
+* `NER_REPO_DIR`: directory containing this README
+* `NER_EXP_DIR`: where to save model files, etc.
 * `NER_DATA_DIR`: location of iob2 processed CoNLL 2003 splits 
 * `MBERT_DIR`: directory containing vocab and ckpt for m-BERT
 

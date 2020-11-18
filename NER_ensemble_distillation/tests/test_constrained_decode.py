@@ -7,13 +7,13 @@ from tensorflow.python.framework import test_util
 
 from scipy.special import logsumexp
 
-from griffin.decode import fwd
+from ner.decode import fwd
 
-from griffin.confidences import span_tuples
-from griffin.crf import forward
-from griffin.crf import log_norm
-from griffin.crf import span_confidence
-from griffin.crf import token_confidence
+from ner.confidences import span_tuples
+from ner.crf import forward
+from ner.crf import log_norm
+from ner.crf import span_confidence
+from ner.crf import token_confidence
 
 
 def satisfies_constraints(states, constraints):

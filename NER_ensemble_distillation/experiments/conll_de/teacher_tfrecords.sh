@@ -4,8 +4,8 @@ set -euo pipefail
 # This assumes you have the following environment variables defined:
 #
 #   MBERT_DIR: directory containing vocab and ckpt for m-BERT
-#   GRIFFIN_REPO_DIR: directory with the project repository
-#   GRIFFIN_EXP_DIR: directory for storing experiment artifacts
+#   NER_REPO_DIR: directory with the project repository
+#   NER_EXP_DIR: directory for storing experiment artifacts
 #   NER_DATA_DIR: directory containing iob2 splits for CoNLL 2003
 
 if [ $# -lt 1 ]; then
@@ -14,11 +14,11 @@ if [ $# -lt 1 ]; then
     exit
 fi
 
-source "${GRIFFIN_REPO_DIR}"/experiments/grid-env.sh
+source "${NER_REPO_DIR}"/experiments/grid-env.sh
 
 MODEL_TYPE=${1}
 
-OUTPUT_DIR=${GRIFFIN_EXP_DIR}/conll_de
+OUTPUT_DIR=${NER_EXP_DIR}/conll_de
 TRAIN=${NER_DATA_DIR}/conll.de.train.iob2
 TEACHER=${OUTPUT_DIR}/${MODEL_TYPE}_ensemble/teachers.txt
 DEV=${NER_DATA_DIR}/conll.de.dev.iob2
@@ -29,7 +29,7 @@ VOCAB=${MBERT_DIR}/vocab.txt
 
 MAX_SENTENCE_LEN=510
 
-SCRIPT="${GRIFFIN_REPO_DIR}/scripts/write_tfrecords.py
+SCRIPT="${NER_REPO_DIR}/scripts/write_tfrecords.py
     --data-format ${DATA_FORMAT}
     --max-sentence-len ${MAX_SENTENCE_LEN}
     --parser conll_subwords_with_alignment
@@ -43,7 +43,7 @@ if [ ! -d ${OUTPUT_DIR} ]; then
 fi
 
 echo "Writing label map to: ${LABEL_MAP}"
-${GRIFFIN_REPO_DIR}/scripts/build_label_map.py --input-paths "${TRAIN},${DEV},${TEST}" --output-path ${LABEL_MAP}
+${NER_REPO_DIR}/scripts/build_label_map.py --input-paths "${TRAIN},${DEV},${TEST}" --output-path ${LABEL_MAP}
 
 echo "Converting ${TEACHER} to TFRecords: ${OUTPUT_DIR}/${MODEL_TYPE}_teacher.tf"
 ${SCRIPT} use_teacher_dists=True conll=${TEACHER} --output ${OUTPUT_DIR}/${MODEL_TYPE}_teacher.tf

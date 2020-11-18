@@ -14,22 +14,22 @@ if [ $# -lt 2 ]; then
     exit
 fi
 
-GPU_DETECT=${GRIFFIN_REPO_DIR}/scripts/gpus_available.py
+GPU_DETECT=${NER_REPO_DIR}/scripts/gpus_available.py
 GPU_DETECT_CMD="python ${GPU_DETECT}"
 
 MODEL_TYPE=${1}
 TEACHERS=${2}
 
-TRAINER=${GRIFFIN_REPO_DIR}/scripts/train_from_features.py
+TRAINER=${NER_REPO_DIR}/scripts/train_from_features.py
 CMD="python ${TRAINER}"
-DATA_DIR=${GRIFFIN_EXP_DIR}/conll_de
+DATA_DIR=${NER_EXP_DIR}/conll_de
 TRAIN=${DATA_DIR}/${MODEL_TYPE}_teacher.tf
 DEV=${DATA_DIR}/t_dev.tf
 TEST=${DATA_DIR}/t_test.tf
 LABEL_MAP=${DATA_DIR}/label_map.pickle
 OUTPUT_DIR=${DATA_DIR}/${MODEL_TYPE}_distilled_${TEACHERS}
 MODEL_DIR=${OUTPUT_DIR}/checkpoints
-EVAL=${GRIFFIN_REPO_DIR}/scripts/conlleval
+EVAL=${NER_REPO_DIR}/scripts/conlleval
 DATA_FORMAT=bert_tokens_cased_with_teacher_dists
 MODEL=bert_iid
 HPARAMS=bert_unfrozen_iid_multi
@@ -39,7 +39,7 @@ TRAIN_BATCH_SIZE=8
 EVAL_BATCH_SIZE=8
 
 
-DIM=`python ${GRIFFIN_REPO_DIR}/scripts/output_dimension.py --label-map=${LABEL_MAP}`
+DIM=`python ${NER_REPO_DIR}/scripts/output_dimension.py --label-map=${LABEL_MAP}`
 
 echo "Checkpoint directory: ${MODEL_DIR}"
 

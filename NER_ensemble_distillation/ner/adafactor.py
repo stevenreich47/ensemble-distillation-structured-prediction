@@ -20,7 +20,7 @@ from __future__ import absolute_import, division, print_function
 import tensorflow.compat.v1 as tf
 from tensorflow.compat.v1.train import Optimizer
 
-from griffin import quantization
+from ner import quantization
 
 
 class AdafactorOptimizer(Optimizer):

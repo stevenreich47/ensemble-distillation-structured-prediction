@@ -1,6 +1,6 @@
 import numpy as np
 
-from griffin.trainer import Trainer
+from ner.trainer import Trainer
 
 
 def test_post_process_windowed_predictions_empty():

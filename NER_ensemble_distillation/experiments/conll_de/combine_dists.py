@@ -30,7 +30,7 @@ if len(sys.argv) < 2:
 
 model = str(sys.argv[1])
 
-exp_dir = os.environ.get('GRIFFIN_EXP_DIR') + f'/conll_de'
+exp_dir = os.environ.get('NER_EXP_DIR') + f'/conll_de'
 out_dir = exp_dir + f'/{model}_ensemble'
 
 train = open(os.environ.get('NER_DATA_DIR')

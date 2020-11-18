@@ -29,8 +29,8 @@ import numpy as np
 import tensorflow as tf
 from absl import logging
 
-from griffin.decode import crf_get_token_probs
-from griffin.features import Predictions
+from ner.decode import crf_get_token_probs
+from ner.features import Predictions
 
 
 # vectorized, 6 time speedup

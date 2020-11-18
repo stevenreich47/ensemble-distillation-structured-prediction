@@ -2,9 +2,9 @@ from typing import Dict
 
 import tensorflow.compat.v1 as tf
 
-from griffin.bert_embedding import BERT
-from griffin.features import Features
-from griffin.hparam import HParams
+from ner.bert_embedding import BERT
+from ner.features import Features
+from ner.hparam import HParams
 
 
 class BertEmbeddingTest(tf.test.TestCase):

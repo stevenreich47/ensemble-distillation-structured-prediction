@@ -18,13 +18,13 @@
 
 import os
 
-from griffin.bert_embedding import BERT
-from griffin.hparam import HParams
-from griffin.models.rnn_crf import bi_crf_adafactor_clipped
-from griffin.models.rnn_crf import bi_crf_adafactor_clipped_nodecay
-from griffin.models.rnn_crf import bi_crf_adam_clipped
-from griffin.models.rnn_crf import BiCRFModel
-from griffin.registry import Registries
+from ner.bert_embedding import BERT
+from ner.hparam import HParams
+from ner.models.rnn_crf import bi_crf_adafactor_clipped
+from ner.models.rnn_crf import bi_crf_adafactor_clipped_nodecay
+from ner.models.rnn_crf import bi_crf_adam_clipped
+from ner.models.rnn_crf import BiCRFModel
+from ner.registry import Registries
 
 
 def add_english_bert_base_to_hparams(hparams, frozen=True,

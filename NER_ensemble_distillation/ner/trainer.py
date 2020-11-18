@@ -44,26 +44,26 @@ import tensorflow as tf2
 from absl import logging
 from typing_extensions import Literal
 
-from griffin.confidences import est_span_conf
-from griffin.data_format import DataFormat
-from griffin.crf import span_confidence
-from griffin.crf import token_confidence
-from griffin.features import Features
-from griffin.features import Predictions
-from griffin.gpu import get_run_config
-from griffin.hparam import HParams
-from griffin.hparams import hparams_maybe_override
-from griffin.hparams import pretty_print_hparams
-from griffin.parser_utils import agg_first
-from griffin.parser_utils import agg_mode_type_first_prefix
-from griffin.parser_utils import collapse_subword_values
-from griffin.registry import Registries
-from griffin.conlleval import report
-from griffin.conlleval import evaluate
-from griffin.conlleval import full_metrics
-from griffin.tfrecord import check_tfrecord_input
-from griffin.tfrecord import number_of_records
-from griffin.tfrecord import sanity_check_tfrecord
+from ner.confidences import est_span_conf
+from ner.data_format import DataFormat
+from ner.crf import span_confidence
+from ner.crf import token_confidence
+from ner.features import Features
+from ner.features import Predictions
+from ner.gpu import get_run_config
+from ner.hparam import HParams
+from ner.hparams import hparams_maybe_override
+from ner.hparams import pretty_print_hparams
+from ner.parser_utils import agg_first
+from ner.parser_utils import agg_mode_type_first_prefix
+from ner.parser_utils import collapse_subword_values
+from ner.registry import Registries
+from ner.conlleval import report
+from ner.conlleval import evaluate
+from ner.conlleval import full_metrics
+from ner.tfrecord import check_tfrecord_input
+from ner.tfrecord import number_of_records
+from ner.tfrecord import sanity_check_tfrecord
 
 #logging.set_verbosity(logging.INFO)
 #absl.logging.set_verbosity(absl.logging.INFO)
@@ -714,7 +714,7 @@ class Trainer:
       # grab the parent directory and pass it to token_calibration_metrics
       parent_folder = Path(self.output_file).parent
 
-      from griffin.token_calibration import token_calibration_metrics
+      from ner.token_calibration import token_calibration_metrics
       is_crf = 'crf' in self.model_name
       calibrated, mean_predicted_values, correct_per_bin, calib, gold_labels = \
         token_calibration_metrics(predictions,

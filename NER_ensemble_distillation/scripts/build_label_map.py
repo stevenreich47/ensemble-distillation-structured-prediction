@@ -22,8 +22,8 @@ import pickle
 from pathlib import Path
 from typing import Dict
 
-from griffin.dataset import dataset_from_file
-from griffin.dataset import Sentence
+from ner.dataset import dataset_from_file
+from ner.dataset import Sentence
 
 
 def build_label_map(input_paths, output_path, max_sentence_len=0, other_tag='O',

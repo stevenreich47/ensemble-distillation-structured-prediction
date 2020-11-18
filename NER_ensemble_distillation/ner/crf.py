@@ -20,7 +20,7 @@
 import tensorflow as tf
 import numpy as np
 
-from griffin.confidences import span_tuples
+from ner.confidences import span_tuples
 
 
 def forward(inputs, state, transition_params, sequence_lengths,

@@ -16,8 +16,8 @@
 
 import tensorflow.compat.v1 as tf
 
-from griffin.hparams import HParams
-from griffin.registry import Registries
+from ner.hparams import HParams
+from ner.registry import Registries
 
 DEFAULT_HPARAMS = HParams()
 

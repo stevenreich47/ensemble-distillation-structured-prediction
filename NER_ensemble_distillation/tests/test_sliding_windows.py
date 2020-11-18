@@ -2,7 +2,7 @@ from typing import List, Iterator
 
 import pytest
 
-from griffin.sliding_windows import sliding_window
+from ner.sliding_windows import sliding_window
 
 
 def test_small_prediction_zone():

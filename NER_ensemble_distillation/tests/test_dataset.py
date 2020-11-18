@@ -1,8 +1,8 @@
 from pathlib import Path
 
-from griffin.dataset import Dataset
-from griffin.dataset import dataset_from_file
-from griffin.dataset import dataset_from_string
+from ner.dataset import Dataset
+from ner.dataset import dataset_from_file
+from ner.dataset import dataset_from_string
 
 
 def test_basic():

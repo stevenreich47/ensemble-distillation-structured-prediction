@@ -19,7 +19,7 @@
 
 import argparse as ap
 
-from griffin.dataset import Dataset
+from ner.dataset import Dataset
 
 if __name__ == "__main__":
   p = ap.ArgumentParser()

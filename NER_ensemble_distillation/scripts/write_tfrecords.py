@@ -32,8 +32,8 @@ from typing import Type
 
 import tensorflow.compat.v1 as tf
 
-from griffin.parser import Parser
-from griffin.registry import Registries
+from ner.parser import Parser
+from ner.registry import Registries
 
 
 def _parse_parser_args(extra_vars: Iterable[str]) -> Dict[str, str]:

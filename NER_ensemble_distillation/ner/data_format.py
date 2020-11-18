@@ -19,8 +19,8 @@ from typing import Iterable
 
 import tensorflow.compat.v1 as tf
 
-from griffin.features import Features
-from griffin.registry import Registries
+from ner.features import Features
+from ner.registry import Registries
 
 FEATURE_SHAPE: Dict[Features, List[Optional[int]]] = {
     Features.BERT_FEATURE_SEQUENCE: [None, 3072],  # FIXME shouldn't hardcode

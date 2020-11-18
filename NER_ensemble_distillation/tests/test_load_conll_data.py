@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import List
 
-from griffin.conll_io import load_conll_file
+from ner.conll_io import load_conll_file
 
 
 def test_with_docstart():

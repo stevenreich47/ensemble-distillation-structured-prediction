@@ -34,16 +34,16 @@ import jsonlines
 from tensorflow.compat.v1.train import SequenceExample
 from tqdm import tqdm
 
-import griffin.bert.tokenization as tokenization
-from griffin.data_format import DataFormat
-from griffin.dataset import Dataset
-from griffin.dataset import dataset_from_file
-from griffin.dataset import Sentence
-from griffin.features import Features
-from griffin.parser_utils import tags_to_ids
-from griffin.registry import Registries
-from griffin.sliding_windows import sliding_window
-from griffin.tfrecord import make_sequence_example
+import ner.bert.tokenization as tokenization
+from ner.data_format import DataFormat
+from ner.dataset import Dataset
+from ner.dataset import dataset_from_file
+from ner.dataset import Sentence
+from ner.features import Features
+from ner.parser_utils import tags_to_ids
+from ner.registry import Registries
+from ner.sliding_windows import sliding_window
+from ner.tfrecord import make_sequence_example
 
 
 class Parser(ABC):

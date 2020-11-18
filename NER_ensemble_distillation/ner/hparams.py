@@ -22,8 +22,8 @@ from argparse import Namespace
 import tensorflow.compat.v1 as tf
 from absl import logging
 
-from griffin.hparam import HParams
-from griffin.registry import Registries
+from ner.hparam import HParams
+from ner.registry import Registries
 
 
 def hparams_with_defaults(hparams, **defaults):

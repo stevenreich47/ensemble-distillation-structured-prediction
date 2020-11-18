@@ -21,9 +21,9 @@ from typing import Dict, List
 
 import tensorflow.compat.v1 as tf
 
-from griffin.bert.modeling import BertConfig, BertModel
-from griffin.features import Features
-from griffin.model import Embedding
+from ner.bert.modeling import BertConfig, BertModel
+from ner.features import Features
+from ner.model import Embedding
 
 
 class BERT(Embedding):

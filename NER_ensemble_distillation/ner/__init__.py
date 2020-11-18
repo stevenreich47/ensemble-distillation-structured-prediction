@@ -13,11 +13,11 @@
 # limitations under the License.
 # ==============================================================================
 
-"""Griffin NER Package."""
+"""NER Package."""
 
-import griffin.data_format
-import griffin.learning_rates
-import griffin.models.bert
-import griffin.models.rnn_crf
-import griffin.models.iid
-import griffin.parser
+import ner.data_format
+import ner.learning_rates
+import ner.models.bert
+import ner.models.rnn_crf
+import ner.models.iid
+import ner.parser

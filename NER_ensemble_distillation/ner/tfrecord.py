@@ -32,8 +32,8 @@ from tensorflow.compat.v1.train import FloatList
 from tensorflow.compat.v1.train import Int64List
 from tensorflow.compat.v1.train import SequenceExample
 
-from griffin.data_format import get_feature_type
-from griffin.features import Features as GriffinFeatures
+from ner.data_format import get_feature_type
+from ner.features import Features as NERFeatures
 
 
 def number_of_records(file_name: str) -> int:
@@ -121,8 +121,8 @@ def make_sequence_example_document(inputs, doc_labels):
 
 
 def make_sequence_example(
-    context_features: Mapping[GriffinFeatures, int],
-    sequence_features: Mapping[GriffinFeatures, Iterable]
+    context_features: Mapping[NERFeatures, int],
+    sequence_features: Mapping[NERFeatures, Iterable]
 ) -> SequenceExample:
   """ Arguments:
     context_features: Dictionary from `Features` to values.
@@ -159,14 +159,14 @@ def make_sequence_example(
     return Feature(int64_list=Int64List(value=[value]))
 
   ctx_features: Dict[str, Features] = {
-      griffin_feature.value: _int_to_feature(feature_value)
-      for griffin_feature, feature_value in context_features.items()
+      ner_feature.value: _int_to_feature(feature_value)
+      for ner_feature, feature_value in context_features.items()
   }
 
   seq_feature_lists: Dict = {
-      griffin_feature.value: FeatureList(feature=_values_to_feature_list(
-          griffin_feature, feature_val))
-      for griffin_feature, feature_val in sequence_features.items()
+      ner_feature.value: FeatureList(feature=_values_to_feature_list(
+          ner_feature, feature_val))
+      for ner_feature, feature_val in sequence_features.items()
   }
 
   for feat in sequence_features.keys():

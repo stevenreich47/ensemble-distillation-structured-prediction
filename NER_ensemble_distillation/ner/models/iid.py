@@ -23,15 +23,15 @@ from typing import Callable
 
 import tensorflow.compat.v1 as tf
 
-from griffin.registry import Registries
-from griffin.hparams import HParams
-from griffin.features import Features
-from griffin.features import Predictions
-from griffin.model import Model
-from griffin.optim import get_training_op
-from griffin.bert_embedding import BERT
-from griffin.models.bert import add_english_bert_base_to_hparams
-from griffin.models.bert import add_rubert_to_hparams
+from ner.registry import Registries
+from ner.hparams import HParams
+from ner.features import Features
+from ner.features import Predictions
+from ner.model import Model
+from ner.optim import get_training_op
+from ner.bert_embedding import BERT
+from ner.models.bert import add_english_bert_base_to_hparams
+from ner.models.bert import add_rubert_to_hparams
 
 @Registries.hparams.register
 def iid_default():

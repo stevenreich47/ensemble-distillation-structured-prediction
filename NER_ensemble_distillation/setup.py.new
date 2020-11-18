@@ -1,13 +1,13 @@
 from setuptools import setup
 
-setup(name='griffin',
+setup(name='ner',
       version='0.2',
       description='2020 Named-Entity Recognition',
-      url='https://gitlab.hltcoe.jhu.edu/research/scale2019',
-      author='The SCALE 2019 Team',
+      url='https://github.com/stevenreich47/ensemble-distillation-structured-prediction',
+      author='EMNLP 2020',
       author_email='noa@jhu.edu',
       license='Apache 2.0',
-      packages=['griffin'],
+      packages=['ner'],
       install_requires=[
             'numpy',
             'tensorflow==2.0.0',

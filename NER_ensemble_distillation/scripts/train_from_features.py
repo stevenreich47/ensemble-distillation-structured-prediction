@@ -27,7 +27,7 @@ import os
 
 from absl import logging
 
-from griffin.trainer import Trainer
+from ner.trainer import Trainer
 
 # From https://stackoverflow.com/questions/35911252
 # 0 = all messages are logged (default behavior)

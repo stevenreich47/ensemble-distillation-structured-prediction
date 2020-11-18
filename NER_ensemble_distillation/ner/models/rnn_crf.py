@@ -26,14 +26,14 @@ from tensorflow.keras.layers import LSTM
 from tensorflow.keras.layers import TimeDistributed
 from tensorflow.keras.layers import Concatenate
 
-from griffin.bert_regularization.finetuning_init import \
+from ner.bert_regularization.finetuning_init import \
   init_vars_from_checkpoint
-from griffin.features import Features
-from griffin.features import Predictions
-from griffin.hparams import HParams
-from griffin.model import Model
-from griffin.optim import get_training_op
-from griffin.registry import Registries
+from ner.features import Features
+from ner.features import Predictions
+from ner.hparams import HParams
+from ner.model import Model
+from ner.optim import get_training_op
+from ner.registry import Registries
 
 
 @Registries.hparams.register

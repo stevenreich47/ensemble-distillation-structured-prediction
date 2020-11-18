@@ -1,7 +1,7 @@
 from typing import List
 
-from griffin.parser import CoNLLSlidingWindowFeatureParser
-from griffin.parser import TaggedStr
+from ner.parser import CoNLLSlidingWindowFeatureParser
+from ner.parser import TaggedStr
 
 windowed_align = CoNLLSlidingWindowFeatureParser._align_tokenization
 

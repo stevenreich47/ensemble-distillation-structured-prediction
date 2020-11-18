@@ -17,8 +17,8 @@ from typing import Dict
 
 import tensorflow.compat.v1 as tf
 
-from griffin.hparam import HParams
-from griffin.registry import Registries
+from ner.hparam import HParams
+from ner.registry import Registries
 
 
 class Model:

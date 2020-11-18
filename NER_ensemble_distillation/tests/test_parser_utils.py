@@ -1,8 +1,8 @@
 import pytest
 
-from griffin.parser_utils import agg_mode_type_first_prefix
-from griffin.parser_utils import collapse_subword_values
-from griffin.parser_utils import agg_concat_bert, agg_first, agg_mode
+from ner.parser_utils import agg_mode_type_first_prefix
+from ner.parser_utils import collapse_subword_values
+from ner.parser_utils import agg_concat_bert, agg_first, agg_mode
 
 
 def test_collapse_subword_values_invalid_alignment_order():

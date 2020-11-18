@@ -27,7 +27,7 @@ from typing import Union
 
 from absl import logging
 
-from griffin.conll_io import load_conll
+from ner.conll_io import load_conll
 
 BASE_TAG = 'O'
 

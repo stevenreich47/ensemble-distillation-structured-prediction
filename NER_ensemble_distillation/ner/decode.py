@@ -20,7 +20,7 @@ from typing import Tuple
 import numpy as np
 from scipy.special import logsumexp
 
-from griffin.confidences import span_tuples
+from ner.confidences import span_tuples
 
 
 def viterbi_decode(score: np.ndarray,
